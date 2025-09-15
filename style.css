@@ -17,21 +17,22 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgb(220, 216, 216);
-  padding: 20px; /* عشان الكارد مايلزقش في الشاشة على الموبايل */
+  padding: 20px; 
 }
 
 .container {
-  width: 700px;
+  max-width: 700px;   
+  width: 100%;        
   display: flex;
   flex-direction: row;
   border-radius: 15px;
   background-color: white;
-  overflow: hidden; /* عشان الصورة والـ data يندمجوا مع بعض */
+  overflow: hidden; 
 }
 
 /* -------------------- Image -------------------- */
 picture {
-  width: 350px;
+  width: 50%;
 }
 
 picture .product {
@@ -42,7 +43,7 @@ picture .product {
 
 /* -------------------- Data -------------------- */
 .data {
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,13 +52,13 @@ picture .product {
 }
 
 .data .name {
-    /* position: relative; */
   text-transform: uppercase;
   letter-spacing: 3px;
   color: gray;
   font-size: 14px;
   margin-bottom: 20px;
 }
+
 .data .name::before {
   content: "by Ahmed Mahmoud";   
   position: absolute;
@@ -132,33 +133,23 @@ picture .product {
 /* -------------------- Responsive -------------------- */
 @media (max-width: 650px) {
   .container {
-    margin: 20px 0;
-    width: 80%;
     flex-direction: column;
+    width: 100%;
+    margin: 10px;
   }
 
   picture {
     width: 100%;
-    height: 400px;
-    border-radius: 15px 15px 0 0;
+    height: auto;
   }
 
   .data {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 20px;
   }
+
   .data .name::before {
-  content: "by Ahmed Mahmoud";   
-  position: absolute;
-  top: -25px;    
-  left: 10px;        
-  background: #c99d1a;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  box-shadow: 0 4px 10px rgba(11,108,255,0.15);
-}
+    top: -15px;
+    left: 0;
+  }
 }
